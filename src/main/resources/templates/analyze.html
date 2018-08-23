@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Text Analyzer / Анализатор Текста</h1>
+<br/>
+<a href="/textFile">&lt;&lt;&lt; To upload page (Назад к загрузке файла)</a>
+<br/>
+<div th:if="${message}">
+    <h3 th:text="${message}"/>
+</div>
+
+<table>
+    <tr>
+        <!--<td>
+            <form action="/analyzing" method="get">
+                <input type="submit" value="Full Analyze"/>
+            </form>
+        </td>-->
+        <td>
+            <form action="/analyzing/topMatchedWords" method="get">
+                <input type="submit" value="Посчитать слова Top 10"/>
+            </form>
+        </td>
+        <td>
+            <form action="/analyzing/bracketCheck " method="get">
+                <input type="submit" value="Проверить скобки"/>
+            </form>
+        </td>
+    </tr>
+
+</table>
+
+
+
+<table>
+    <div th:if="${words}">
+    <h3>Подсчет слов top 10 часто встречающихся:</h3>
+    </div>
+    <tr>
+        <td>
+            <div  th:if="${words}">
+                <h5>Word(Слово)</h5>
+                <p th:each="words : ${words}"
+                    th:text="${words}"></p>
+            </div>
+        </td>
+        <td>
+            <div  th:if="${raiting}">
+                <h5>Repetition(Повторений)</h5>
+                <p th:each="raiting : ${raiting}"
+                   th:text="${raiting}"></p>
+            </div>
+        </td>
+    </tr>
+
+</table>
+
+
+<div th:if="${bracketResult}">
+    <h3>Check Brackets (Проверка скобок): </h3>
+    <div th:text="${bracketResult}"/>
+</div>
+
+
+</body>
+</html>

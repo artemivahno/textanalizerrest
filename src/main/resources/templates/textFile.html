@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Text Analyzer / Анализатор Текста</h1>
+<div  th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+<form method="POST" action="/textFile" enctype="multipart/form-data">
+    <input type="file" accept=".txt" name="file" /><br/><br/>
+    <input type="submit" value="Upload File! | Загрузить файл" />
+</form>
+
+</body>
+</html>

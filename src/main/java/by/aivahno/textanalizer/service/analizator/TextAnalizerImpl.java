@@ -15,12 +15,6 @@ public class TextAnalizerImpl implements TextAnalyzer {
     @Autowired
     private StopWords stopWords;
 
-/**
- * The method counts duplicate words in the text,
- * and return the result in the form of a word usage rating.
- * @param text is an incoming text for analyzing.
- * @return sorted rating List.
- * **/
     @Override
     public List <Map.Entry<String, Integer>> topTenRepeatingWords(String text) {
         String cleaneText = excludeSpecifiedWords(text);
@@ -46,44 +40,8 @@ public class TextAnalizerImpl implements TextAnalyzer {
     public String bracketChecker(String text) { //text - загруженный текст
         String result = "";
         boolean correctMark = true;
-        if (text.isEmpty())
-            return result = "correct";
-
-        Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < text.length(); i++)
-        {
-            char current = text.charAt(i);
-            correctMark = true;
-            if (current == '{' || current == '(' || current == '[')
-            {
-                stack.push(current);
-            }
-
-
-            if (current == '}' || current == ')' || current == ']')
-            {
-                if (stack.isEmpty())
-                    return result = "incorrect";
-                    correctMark = false;
-                char last = stack.peek();
-                if (current == '}' && last == '{' || current == ')' && last == '(' || current == ']' && last == '[')
-                    stack.pop();
-
-                else
-                    return result = "incorrect";
-                    correctMark = false;
-            }
-
-
-        }
-
-        return result;
-
-        /*String result = "";
-        boolean correctMark = true;
         LinkedList<Character> stack = new LinkedList<>();
         for(int i = 0 ; i < text.length(); i++){
-            correctMark = true;
             Character ch = text.charAt(i);
 
             switch (ch){
@@ -121,7 +79,7 @@ public class TextAnalizerImpl implements TextAnalyzer {
             result = "correct";
         }
 
-        return result;*/
+        return result;
     }
         //Метод удаляет из текста allStopWords.
     private String excludeSpecifiedWords(String text){

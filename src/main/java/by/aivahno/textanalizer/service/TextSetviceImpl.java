@@ -12,14 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Implementation of {@link TextService} interface.
- * Service for work with Text and Analyze  components
- *
- * @author Denis Lesheniuk
- * @version 1.0
- *
- * **/
 @Service("textService")
 public class TextSetviceImpl implements TextService {
 

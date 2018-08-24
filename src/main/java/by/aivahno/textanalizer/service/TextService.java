@@ -5,13 +5,9 @@ import by.aivahno.textanalizer.model.Text;
 
 import java.io.File;
 
-/**
- * Service for work with Text and Analyze  components
- *
- * @author Denis Lesheniuk
- * @version 1.0
- *
- */
+
+// Service for work with Text and Analyze  components
+
 public interface TextService {
     public File getFile();
     public void setFile(File texts);

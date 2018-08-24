@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>ml.ledv</groupId>
-	<artifactId>textanalizeradvancedlv</artifactId>
+	<groupId>by.ivahno</groupId>
+	<artifactId>textanalizerrest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>textanalizeradvancedlv</name>
+	<name>textanalizerrest</name>
 	<description></description>
 
 	<parent>

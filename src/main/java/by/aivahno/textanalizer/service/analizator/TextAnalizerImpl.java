@@ -22,7 +22,6 @@ public class TextAnalizerImpl implements TextAnalyzer {
         Map<String, Integer> rating = new HashMap<>();
         for(String word: words){
             if(!word.equals("")&&!word.equals("-")) {
-               //word = word.toLowerCase();
                 if (rating.containsKey(word))
                     rating.put(word, rating.get(word) + 1);
                 else rating.put(word, 1);

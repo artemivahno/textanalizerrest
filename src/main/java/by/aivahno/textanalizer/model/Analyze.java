@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 
-
+// модель сущностей для анализа
 @Component
 public class Analyze {
     private List<Map.Entry<String, Integer>> topMatchedWords;

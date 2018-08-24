@@ -16,9 +16,9 @@ import java.util.Map;
 public class TextSetviceImpl implements TextService {
 
     @Autowired
-    private TextAnalyzer textAnalyzer; // service for analizing text.
+    private TextAnalyzer textAnalyzer; // Сервис для анализа текста
     @Autowired
-    private FileReader fileReaderImpl;// service for file handing.
+    private FileReader fileReaderImpl;// Сервис для загрузки текста
     @Autowired
     private Text text;
     @Autowired
@@ -52,13 +52,7 @@ public class TextSetviceImpl implements TextService {
 
 
 
-
-    /**
-     * Method does text analysis to get the 10 most frequently used words in the text.
-     * Conjunctions, prepositions and pronouns are excluded from the statistics.
-     * @return Analyze object with a result in field topMatchedWords = result
-     *                                         field bracketChek = null.
-     */
+     //Method does text analysis to get the 10 most frequently used words in the text
     public Analyze topMatchedWordsTextAnalyze() {
         String txt = "";
         txt = fileReaderImpl.textExtractor(text.getFile());
@@ -76,12 +70,7 @@ public class TextSetviceImpl implements TextService {
         return analyze;
     }
 
-    /**
-     * Method does text analysis to get the iformation about the correctness of the brackets in the text .
-
-     * @return Analyze object with a result in field bracketChek = currect/incorrect.
-     *                                         field topMatchedWords = null.
-     */
+    //Method does text analysis to get the iformation about the correctness of the brackets in the text
     @Override
     public Analyze bracketCheckTextAnalyze() {
         String txt = "";

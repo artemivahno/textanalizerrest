@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 
+//Извлекает стоп слова из файла
 @Service("fileReaderImpForStopWords")
 public class FileReaderImplForStopWords implements FileReader {
 

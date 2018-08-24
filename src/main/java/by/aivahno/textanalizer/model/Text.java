@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 
-
+//модель загружаемых файлов
 @Component
 public class Text {
     private File file;

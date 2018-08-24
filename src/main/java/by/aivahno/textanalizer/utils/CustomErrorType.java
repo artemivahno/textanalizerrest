@@ -1,11 +1,5 @@
 package by.aivahno.textanalizer.utils;
 
-/***
- * Class for creating error names
- *
- * @author Denis Lesheniuk
- * @version 1.0
- * */
 public class CustomErrorType {
     private String errorMessage;
 

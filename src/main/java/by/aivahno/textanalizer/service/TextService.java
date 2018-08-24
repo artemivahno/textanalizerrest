@@ -6,7 +6,7 @@ import by.aivahno.textanalizer.model.Text;
 import java.io.File;
 
 
-// Service for work with Text and Analyze  components
+// Сервис для работы с текстом и анализа компонентов
 
 public interface TextService {
     public File getFile();

@@ -25,7 +25,7 @@ public class TextAnalizerImpl implements TextAnalyzer {
                //word = word.toLowerCase();
                 if (rating.containsKey(word))
                     rating.put(word, rating.get(word) + 1);
-                else rating.put(word, 0);
+                else rating.put(word, 1);
             }
         }
         List<Map.Entry<String, Integer>> sortedRating = rating.entrySet().stream()

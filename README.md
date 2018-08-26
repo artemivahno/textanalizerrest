@@ -22,4 +22,6 @@
 RestFul api(Description in controlers/RESTApiController.java).
 
 ````
-Запускаем http://localhost:8080Л
+Запускаем
+TextAnalizerWebApplication
+и в браузере  http://localhost:8080

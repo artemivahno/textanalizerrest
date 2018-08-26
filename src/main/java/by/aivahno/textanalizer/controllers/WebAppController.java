@@ -29,14 +29,15 @@ public class WebAppController {
     @Autowired
     private TextService textService;
 
-  //Метод перехватывает запрос GET со страницы index.html
+    //The method intercepts the GET request from the index.html page
 
     @RequestMapping(value = "/textFile", method = RequestMethod.GET)
     public String index(){
         return "textFile";
     }
 
-    //Метод перехватывает запрос POST и если файл без ошибок, создает новый файл в корневом каталоге проекта.
+    //The method intercepts the POST request and if the file is error-free, creates
+    // a new file in the root directory of the project.
 
     @RequestMapping(value = "/textFile", method = RequestMethod.POST)
     public String handleFileUpload(@RequestParam("file")MultipartFile file, RedirectAttributes redirectAttributes){
@@ -44,7 +45,8 @@ public class WebAppController {
         if(uploadFile.exists())
             uploadFile.delete();
         if(file.isEmpty()){
-            redirectAttributes.addFlashAttribute("message", "File is empty. Please select a file to upload / Файл пустой, или не выбран, выберите, пожалуйста, файл");
+            redirectAttributes.addFlashAttribute("message", "File is empty. Please select a file to upload / " +
+                    "Файл пустой, или не выбран, выберите, пожалуйста, файл");
             return "redirect:textFile";
         }
         if(!file.getOriginalFilename().endsWith(".txt")){
@@ -72,10 +74,9 @@ public class WebAppController {
         return "analyze";
     }
 
-    /**
-     * Метод перехватывает запрос GET /analyzing/topMatchedWords request, and does topMatchedWords text analyze.
-     * @return the analyze view with the raiting, words attributes.
-     */
+
+   //  The method intercepts the request GET /analyzing/topMatchedWords request, and does topMatchedWords text analyze
+
     @GetMapping("/analyzing/topMatchedWords")
     public String topMatchedWords(RedirectAttributes redirectAttributes){
         Analyze analyze = textService.topMatchedWordsTextAnalyze();
@@ -91,7 +92,8 @@ public class WebAppController {
         return "redirect:/analyze";
     }
 
-        //Метод перехватывает запрос GET /analyzing/bracketCheck request, и анализирует правильность скобок в тексте.
+        //The method intercepts GET /analyzing/bracketCheck request, and analyzes the correctness of the brackets
+            // in the text.
 
     @GetMapping("/analyzing/bracketCheck")
     public String bracketCheck(RedirectAttributes redirectAttributes){

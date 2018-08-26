@@ -8,7 +8,7 @@ public class StopWords {
 
     @Autowired
     private FileReader fileReaderImpForStopWords;
-        //Загружает StopWords
+    //Loads StopWords
     public String getAllStopWords(){
         String stopWords = fileReaderImpForStopWords.textExtractor(
                 "rusStopWords.txt");

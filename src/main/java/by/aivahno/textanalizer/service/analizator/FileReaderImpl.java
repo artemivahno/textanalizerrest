@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 
-//Извлекает текст из файла для анализа
+// Extract text from file for analysis
 @Service("fileReaderImpl")
 public class FileReaderImpl implements FileReader {
 

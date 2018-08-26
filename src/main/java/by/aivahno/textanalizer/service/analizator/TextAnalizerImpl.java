@@ -15,6 +15,7 @@ public class TextAnalizerImpl implements TextAnalyzer {
     @Autowired
     private StopWords stopWords;
 
+    ////Method for word processing and sorting
     @Override
     public List <Map.Entry<String, Integer>> topTenRepeatingWords(String text) {
         String cleaneText = excludeSpecifiedWords(text);
@@ -36,7 +37,7 @@ public class TextAnalizerImpl implements TextAnalyzer {
     }
 
     @Override
-    public String bracketChecker(String text) { //text - загруженный текст
+    public String bracketChecker(String text) {
         String result = "";
         boolean correctMark = true;
         LinkedList<Character> stack = new LinkedList<>();
@@ -80,9 +81,8 @@ public class TextAnalizerImpl implements TextAnalyzer {
 
         return result;
     }
-        //Метод удаляет из текста allStopWords.
+        //The method removes all StopWords from the text.
     private String excludeSpecifiedWords(String text){
-
 
         String allStopWords = stopWords.getAllStopWords();
         String [] allStopWordsArr = allStopWords.split("[^а-яА-ЯёЁ+-]+");

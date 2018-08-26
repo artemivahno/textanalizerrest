@@ -32,7 +32,7 @@ public class RestApiController {
     //Uploading file
     @RequestMapping(value = "/textFile", method = RequestMethod.POST)
     public ResponseEntity<?> handleFileUpload(@RequestParam("file")MultipartFile file){
-        File upfile = new File("uploaded.txt");             //создается в корне проекта
+        File upfile = new File("uploaded.txt");             //file is created in the root of the project
         if(file.isEmpty()){
             logger.error("File is empty");
             return new ResponseEntity(new CustomErrorType("File is empty"),
